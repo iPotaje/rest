@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="theApp">
+<head>
+	<meta charset="UTF-8">
+	<title>List of Puzzle Games</title>
+	<script src="dist/bundle.min.js"></script>
+</head>
+<body >
+	<div id="list-container" ng-controller="listController">
+    <ul id="list" ng-repeat="item in list">
+      <li>{{item}}</li>
+    </ul>
+		<h2>Debug data</h2>
+		<h4>{{data}}</h4>
+	</div>
+		
+		
+		<button href="#" ng-click="getAll()">Get all</button>
+		<button ng-click="get();">Get 1</button>
+		<button ng-click="update()">Update 1</button>
+		<button ng-click="add()">Add 1</button>
+		<button ng-click="del()">Delete 1</button>
+
+</body>
+</html>
