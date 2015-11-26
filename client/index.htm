@@ -7,11 +7,11 @@
 </head>
 <body >
 	<div id="list-container" ng-controller="listController">
-    <ul id="list" ng-repeat="item in list">
+    <ul id="list" ng-repeat="item in list" ng-cloack>
       <li>{{item}}</li>
     </ul>
 		<h2>Debug data</h2>
-		<h4>{{data}}</h4>
+		<h4 ng-cloack>{{data}}</h4>
 	</div>
 		
 		
