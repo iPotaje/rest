@@ -26,23 +26,44 @@
     "gulp-ng-annotate": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
     "gulp-webserver": "^0.9.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
   },
   "browser": {
-  "jquery": "./node_modules/jquery/dist/jquery.js",
-  "foundation": "./node_modules/foundation-sites/js/foundation.js"
-},
-"browserify-shim": {
-  "jquery": "$",
-  "foundation": "foundation"
-},
-"browserify": {
-  "transform": [
-    "browserify-shim", ["babelify", { "presets": ["es2015"] }]
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "foundation": "./node_modules/foundation-sites/js/foundation.core.js",
+    "foundation.offcanvas": "./node_modules/foundation-sites/js/foundation.offcanvas.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "foundation": {
+      "exports": "foundation",
+      "depends": [
+        "jquery"
+      ]
+    },
+    "foundation.offcanvas": {
+      "depends": [
+        "foundation"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
     ]
-}
+  }
 }

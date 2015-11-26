@@ -12,6 +12,8 @@ var babelify        = require('babelify'); //Babelify need package: babel-preset
 var source          = require('vinyl-source-stream');
 var buffer          = require('vinyl-buffer');
 var rename          = require('gulp-rename');
+var sourcemaps      = require('gulp-sourcemaps');
+var gutil           = require('gulp-util');
 
 
 var dest      = {
@@ -104,8 +106,11 @@ function bundle_js(bundler) {
   return bundler.bundle()
     .pipe(source('all.js'))
     .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps:true}))
     .pipe(rename('bundle.min.js'))
     .pipe(uglify())
+    .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
 }
 
