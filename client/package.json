@@ -34,28 +34,14 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
   },
-  "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "foundation": "./node_modules/foundation-sites/js/foundation.core.js",
-    "foundation.offcanvas": "./node_modules/foundation-sites/js/foundation.offcanvas.js"
-  },
   "browserify-shim": {
-    "jquery": "$",
-    "foundation": {
-      "exports": "foundation",
-      "depends": [
-        "jquery"
-      ]
-    },
-    "foundation.offcanvas": {
-      "depends": [
-        "foundation"
-      ]
-    }
+    "jquery" : { "exports": "global:$" },
+    "angular" : { "exports": "global:angular" },
+    "foundation" : {"exports" : "global:foundation"}
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
+      ["browserify-shim", {"global":true}],
       [
         "babelify",
         {

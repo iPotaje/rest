@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>List of Puzzle Games</title>
-	<link rel="stylesheet" type="text/css" href="node_modules/foundation-sites/dist/foundation.css">
+	<link rel="stylesheet" type="text/css" href="lib/foundation.min.css">
+  	<script src="lib/jquery.min.js"></script>
+  	<script src="lib/angular.min.js"></script>
+  	<script src="lib/foundation.min.js"></script>
 	<script src="dist/bundle.min.js"></script>
 </head>
 <body >
@@ -23,26 +26,23 @@
 		<button ng-click="del()">Delete 1</button>
 
 
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
+    <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+        Off Canvas Content
+      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+      <button type="button" class="button" data-toggle="offCanvas">Open Menu</button>
+        <h4>Content</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
 
-    <a class="left-off-canvas-toggle" href="#" >Menu</a>
-
-    <!-- Off Canvas Menu -->
-    <aside class="left-off-canvas-menu">
-        <!-- whatever you want goes here -->
-        <ul>
-          <li><a href="#">Item 1</a></li>
-        </ul>
-    </aside>
-
-    <!-- main content goes here -->
-    <p>Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all possibilities in large societies to mathematics, allowing for the prediction of future events.</p>
-
-  <!-- close the off-canvas menu -->
-  <a class="exit-off-canvas"></a>
-
-  </div>
-</div>
 </body>
 </html>

@@ -31,3 +31,10 @@ https://aymericbeaumet.me/properly-shim-angularjs-applications-using-browserify/
 ##### Sublime Text Column Selection
 OS X Left Mouse Button + Option
 https://www.sublimetext.com/docs/2/column_selection.html
+
+##### Browserify-shim
+https://github.com/thlorenz/browserify-shim
+
+##### Foundation 6 Off Canvas 
+http://foundation.zurb.com/forum/posts/36391-foundation-6-off-canvas-menu
+I was mixing code from versions 5 and 6... that was the problem
