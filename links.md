@@ -34,7 +34,8 @@ https://www.sublimetext.com/docs/2/column_selection.html
 
 ##### Browserify-shim
 https://github.com/thlorenz/browserify-shim
+https://github.com/thlorenz/browserify-shim/issues/156
 
 ##### Foundation 6 Off Canvas 
-http://foundation.zurb.com/forum/posts/36391-foundation-6-off-canvas-menu
+http://foundation.zurb.com/forum/posts/36391-foundation-6-off-canvas-menu  
 I was mixing code from versions 5 and 6... that was the problem
