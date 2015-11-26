@@ -17,4 +17,9 @@ Finally used browserify-shim in package.json like this:
 
 Imported from a cdn ... or from a local folder
 
-- Started to use mapsource, watch errors without them is impossible
+- Started to use mapsource, watch errors without them is impossible   
+- Markdown: Force a new line -> make two space before new line ;)
+- Git commands:
+git push origin master
+git commit -am "message"
+git log
