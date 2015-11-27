@@ -44,4 +44,4 @@ Todo:
     * Add function: validate if is empty the input field, clean input before
     * Update function: Highlight the element updating, update buttons values
     * Style: Add margin from the left to the list
-    * When seach and delete the list is the same and can delete other elements not showing
+    * When search and delete the list is the same and can delete other elements not showing

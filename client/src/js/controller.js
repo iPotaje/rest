@@ -14,6 +14,8 @@ angular.module('theApp')
     }).then(function successCallback(response) {
         $scope.list = response.data;
         $scope.data = response;
+        $scope.searchText = "";
+        $scope.inputText = "";
       }, function errorCallback(response) {
         $scope.data = response;
       });
@@ -30,6 +32,8 @@ angular.module('theApp')
     }).then(function successCallback(response) {
         $scope.list = response.data;
         $scope.data = response;
+        $scope.searchText = "";
+        $scope.inputText = "";
       }, function errorCallback(response) {
         $scope.data = response;
       });
@@ -70,6 +74,8 @@ angular.module('theApp')
     }).then(function successCallback(response) {
         $scope.list = response.data;
         $scope.data = response;
+        $scope.searchText = "";
+        $scope.inputText = "";
       }, function errorCallback(response) {
         $scope.data = response;
       });
@@ -83,6 +89,8 @@ angular.module('theApp')
     }).then(function successCallback(response) {
         $scope.list = response.data;
         $scope.data = response;
+        $scope.searchText = "";
+        $scope.inputText = "";
       }, function errorCallback(response) {
         $scope.data = response;
       });
