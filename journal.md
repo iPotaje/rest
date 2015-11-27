@@ -39,3 +39,9 @@ We need to redistribute all folders!
 https://git-scm.com/book/en/v2/Git-Basics-Tagging  
     git tag  
 - Add autofocus attribute and tabindex="number"
+
+Todo:   
+    * Add function: validate if is empty the input field, clean input before
+    * Update function: Highlight the element updating, update buttons values
+    * Style: Add margin from the left to the list
+    * When seach and delete the list is the same and can delete other elements not showing
