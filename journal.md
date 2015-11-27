@@ -27,9 +27,10 @@ git log
 ###11/27/2015   
 - Added php server to gulpfile   
 Don't forget detached process in spawn and stdio configuration (see links)   
-- Final design with foundation
-    * Title bar : http://foundation.zurb.com/sites/docs/off-canvas.html#title-bar
-    * Buttons, Callout, Icons, Off-canvas
+- Final design with foundation  
+    * Title bar : http://foundation.zurb.com/sites/docs/off-canvas.html#title-bar  
+    * Buttons, Callout, Icons, Off-canvas  
 - Markdown nested list : indent four spaces    
 - Add minify html to gulp to strip comments in html files   
 We need to redistribute all folders!  
+- Finish business logic, all CRUD operations

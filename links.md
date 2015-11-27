@@ -42,5 +42,8 @@ I was mixing code from versions 5 and 6... that was the problem
 
 ##### Child process in node  
 https://nodejs.org/api/child_process.html#child_process_synchronous_process_creation  
-Don't forget detached option in spawn process and stdio configuration!   
+Don't forget detached option in spawn process and stdio configuration!  
+
+##### HTML Gulp minify   
+https://github.com/murphydanger/gulp-minify-html
 
