@@ -1,3 +1,4 @@
+// Todo: order of the list
 angular.module('theApp')
 
 .controller('listController', function($scope, $http) 
@@ -12,7 +13,7 @@ angular.module('theApp')
       url: 'http://localhost:8080/index.php/puzzles'
     }).then(function successCallback(response) {
         $scope.list = response.data;
-        $scope.data = response
+        $scope.data = response;
       }, function errorCallback(response) {
         $scope.data = response;
       });
@@ -21,12 +22,27 @@ angular.module('theApp')
   };
 
   $scope.getAll();
+
+  $scope.reset = function (){
+    $http({
+      method: 'GET',
+      url: 'http://localhost:8080/index.php/puzzles_reset'
+    }).then(function successCallback(response) {
+        $scope.list = response.data;
+        $scope.data = response;
+      }, function errorCallback(response) {
+        $scope.data = response;
+      });
+    
+    console.log("getAll");
+  };
  
   $scope.get = function (){
     $http({
       method: 'GET',
       url: '/tmp/index.php/users/1'
     }).then(function successCallback(response) {
+        $scope.list = "fin";
         $scope.data = response;
       }, function errorCallback(response) {
         $scope.data = response;
@@ -52,6 +68,7 @@ angular.module('theApp')
       url: 'http://localhost:8080/index.php/add_puzzle',
       data: '{"value":"'+data+'"}'
     }).then(function successCallback(response) {
+        $scope.list = response.data;
         $scope.data = response;
       }, function errorCallback(response) {
         $scope.data = response;
@@ -59,15 +76,19 @@ angular.module('theApp')
     console.log("add");
   };
 
-  $scope.del = function (){
+  $scope.del = function (index){
     $http({
       method: 'DELETE',
-      url: '/tmp/index.php/users/2'
+      url: 'http://localhost:8080/puzzles/' + index
     }).then(function successCallback(response) {
+        $scope.list = response.data;
         $scope.data = response;
       }, function errorCallback(response) {
         $scope.data = response;
       });
     console.log("del");
   };
+  $scope.delete = function (index){
+    console.log("quiere borrar: " + index)
+  }
 })

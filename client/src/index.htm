@@ -47,12 +47,12 @@
                   <ul id="list" ng-repeat="item in list | filter:searchText" ng-cloack>
                     <li class="clearfix">
                       <div class="li_item">{{item}}</div>
-                      <button class="float-right tiny button alert"><i class="fi-x"></i></button>
+                      <button class="float-right tiny button alert" ng-click="del($index)"><i class="fi-x"></i></button>
                       <button class="float-right tiny button success"><i class="fi-pencil"></i></button>                        
                     </li>
                   </ul>
       </div><!-- list-container -->
-      <button class="button large float-right" ng-click="printing()"><i class="fi-refresh"></i></button>
+      <button class="button large float-right" ng-click="reset()"><i class="fi-refresh"></i></button>
       </div><!-- columns -->
     </div><!-- row -->
     <div class="row">

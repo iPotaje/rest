@@ -4,3 +4,4 @@ client/node_modules
 client/pre
 server/vendor
 server/composer.lock
+server/data/data.json
