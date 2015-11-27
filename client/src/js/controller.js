@@ -2,7 +2,6 @@ angular.module('theApp')
 
 .controller('listController', function($scope, $http) 
 {
-  $scope.debugger = "no hombresss";
   $scope.printing = function() {
     console.log("printnnnnt");
   };

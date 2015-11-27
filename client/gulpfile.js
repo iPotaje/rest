@@ -157,6 +157,7 @@ gulp.task('php_server_stop', function() {
 
 gulp.task('default', ['php_server', 'copy', 'annotate', 'templates', 'scripts', 'watcher','webserver', 'watchify']);
 gulp.task('finish', ['php_server_stop', 'clean']);
+gulp.task('finish_all', ['finish', 'clean_dist']);
 
 gulp.task('copy', ['copy_images', 'copy_lib', 'copy_css', 'minify-html']);
 
