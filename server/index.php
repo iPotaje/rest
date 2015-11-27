@@ -75,13 +75,13 @@ $app->put('/puzzles/:id', function ($id) use ($app){
     $input = json_decode($body, true);
     
 
-    array_push($puzzles, $input['value']);
+    $puzzles[$id] = $input['value'];
 
     
     file_put_contents('./data/data.json',json_encode($puzzles));
     // return JSON-encoded response body
     $app->response()->header('Content-Type', 'application/json');
-    echo json_encode($input);
+    echo json_encode($puzzles);
   } catch (Exception $e) {
     $app->response()->status(400);
     $app->response()->header('X-Status-Reason', $e->getMessage());

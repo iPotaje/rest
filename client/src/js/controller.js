@@ -3,10 +3,6 @@ angular.module('theApp')
 
 .controller('listController', function($scope, $http) 
 {
-  $scope.printing = function() {
-    console.log("printnnnnt");
-  };
-
   $scope.getAll = function (){
     $http({
       method: 'GET',
@@ -19,8 +15,6 @@ angular.module('theApp')
       }, function errorCallback(response) {
         $scope.data = response;
       });
-    
-    console.log("getAll");
   };
 
   $scope.getAll();
@@ -37,29 +31,18 @@ angular.module('theApp')
       }, function errorCallback(response) {
         $scope.data = response;
       });
-    
-    console.log("getAll");
-  };
- 
-  $scope.get = function (){
-    $http({
-      method: 'GET',
-      url: '/tmp/index.php/users/1'
-    }).then(function successCallback(response) {
-        $scope.list = "fin";
-        $scope.data = response;
-      }, function errorCallback(response) {
-        $scope.data = response;
-      });
-    console.log("get");
   };
 
-  $scope.update = function (){
+  $scope.updateThis = function (index, data){
+    console.log("update:" + index + ":" + data);
     $http({
       method: 'PUT',
-      url: '/tmp/index.php/users/1'
+      url: 'http://localhost:8080/puzzles/' + index,
+      data: '{"value":"'+data+'"}'
     }).then(function successCallback(response) {
+        $scope.list = response.data;
         $scope.data = response;
+        $scope.cancel();
       }, function errorCallback(response) {
         $scope.data = response;
       });
@@ -74,8 +57,7 @@ angular.module('theApp')
     }).then(function successCallback(response) {
         $scope.list = response.data;
         $scope.data = response;
-        $scope.searchText = "";
-        $scope.inputText = "";
+        $scope.cancel();
       }, function errorCallback(response) {
         $scope.data = response;
       });
@@ -97,6 +79,16 @@ angular.module('theApp')
     console.log("del");
   };
   $scope.update = function (index){
+    console.log("update entry");
     $scope.inputText = $scope.list[index];
+    $scope.isUpdating = true;
+    $scope.toUpdate = index;
+  };
+  $scope.isUpdating = false;
+
+  $scope.cancel = function (){
+    $scope.isUpdating = false;
+    $scope.searchText = "";
+    $scope.inputText = "";
   }
 })
