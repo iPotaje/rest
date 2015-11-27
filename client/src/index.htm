@@ -37,18 +37,19 @@
     <div class="row hide-for-small-only">&nbsp;
     </div>
     <div class="row">
-      <div class="small-12 medium-6 medium-offset-3 columns">
-        <div id="list-container" class="callout small">
-          <div class="input-group">
-            <input class="input-group-field" type="text" ng-model="inputText" autofocus tabindex="1"></input>
-            <a class="input-group-button button success" ng-click="searchText = inputText" tabindex="2">Search</a>
-            <a class="input-group-button button Success" ng-click="add(inputText)" tabindex="3">Add</a>
-          </div>
+      <div id="list-container" class="small-12 medium-6 medium-offset-3 columns">
+        <div class="input-group">
+          <input class="input-group-field" type="text" ng-model="inputText" autofocus tabindex="1"></input>
+          <a class="input-group-button button success" ng-click="searchText = inputText" tabindex="2">Search</a>
+          <a class="input-group-button button Success" ng-click="add(inputText)" tabindex="3">Add</a>
+        </div>
+        <div id="list-container-list">
+          
                   <ul id="list" ng-repeat="item in list | filter:searchText" ng-cloack>
                     <li class="clearfix">
                       <div class="li_item">{{item}}</div>
                       <button class="float-right tiny button alert" ng-click="del($index)"><i class="fi-x"></i></button>
-                      <button class="float-right tiny button success"><i class="fi-pencil"></i></button>                        
+                      <button class="float-right tiny button success" ng-click="update($index)"><i class="fi-pencil"></i></button>                        
                     </li>
                   </ul>
       </div><!-- list-container -->

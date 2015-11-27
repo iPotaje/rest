@@ -88,7 +88,7 @@ angular.module('theApp')
       });
     console.log("del");
   };
-  $scope.delete = function (index){
-    console.log("quiere borrar: " + index)
+  $scope.update = function (index){
+    $scope.inputText = $scope.list[index];
   }
 })
