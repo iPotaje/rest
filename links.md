@@ -39,3 +39,8 @@ https://github.com/thlorenz/browserify-shim/issues/156
 ##### Foundation 6 Off Canvas   
 http://foundation.zurb.com/forum/posts/36391-foundation-6-off-canvas-menu   
 I was mixing code from versions 5 and 6... that was the problem
+
+##### Child process in node  
+https://nodejs.org/api/child_process.html#child_process_synchronous_process_creation  
+Don't forget detached option in spawn process and stdio configuration!   
+

@@ -23,3 +23,7 @@ Imported from a cdn ... or from a local folder
 git push origin master
 git commit -am "message"
 git log
+
+###11/27/2015   
+- Added php server to gulpfile   
+Don't forget detached process in spawn and stdio configuration (see links)

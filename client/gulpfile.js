@@ -126,4 +126,22 @@ gulp.task('browserify',['scripts'], function () {
   return bundle_js(bundler);
 })
 
+var spawn = require('child_process').spawn;
+
+gulp.task('php_server', function(){
+    phpserver   = spawn('php', ['-S', 'localhost:8080'],{
+      cwd : "../server/",
+      detached : true,
+      stdio: [ 'ignore', 'ignore', 'ignore' ]
+    });
+
+  phpserver.unref();
+});
+
+var exec = require('child_process').execSync;
+
+gulp.task('php_server_stop', function() {
+  exec('killall php');
+});
+
 gulp.task('default', ['annotate', 'templates', 'scripts', 'watcher','webserver', 'watchify']);
