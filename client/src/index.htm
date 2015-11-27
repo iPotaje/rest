@@ -40,11 +40,11 @@
       <div class="small-12 medium-6 medium-offset-3 columns">
         <div id="list-container" class="callout small">
           <div class="input-group">
-            <input class="input-group-field" type="text"></input>
-            <a class="input-group-button button success" ng-click="showDebug = !showDebug">Search</a>
-            <a class="input-group-button button Success" ng-click="printing()">Add</a>
+            <input class="input-group-field" type="text" ng-model="inputText" autofocus tabindex="1"></input>
+            <a class="input-group-button button success" ng-click="searchText = inputText" tabindex="2">Search</a>
+            <a class="input-group-button button Success" ng-click="add(inputText)" tabindex="3">Add</a>
           </div>
-                  <ul id="list" ng-repeat="item in list" ng-cloack>
+                  <ul id="list" ng-repeat="item in list | filter:searchText" ng-cloack>
                     <li class="clearfix">
                       <div class="li_item">{{item}}</div>
                       <button class="float-right tiny button alert"><i class="fi-x"></i></button>

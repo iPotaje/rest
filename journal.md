@@ -38,3 +38,4 @@ We need to redistribute all folders!
 - Add tag to git repository   
 https://git-scm.com/book/en/v2/Git-Basics-Tagging  
     git tag  
+- Add autofocus attribute and tabindex="number"

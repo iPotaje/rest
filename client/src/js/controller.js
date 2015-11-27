@@ -46,11 +46,11 @@ angular.module('theApp')
     console.log("update");
   };
 
-  $scope.add = function (){
+  $scope.add = function (data){
     $http({
       method: 'POST',
-      url: '/tmp/index.php/add_user',
-      data: '{"value":"cero"}'
+      url: 'http://localhost:8080/index.php/add_puzzle',
+      data: '{"value":"'+data+'"}'
     }).then(function successCallback(response) {
         $scope.data = response;
       }, function errorCallback(response) {

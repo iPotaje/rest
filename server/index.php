@@ -9,31 +9,41 @@ cors();
 $app = new \Slim\Slim();
 
 //Data to use
-$app->puzzles = json_decode(file_get_contents('./data/data.init.json'));
+// $app->puzzles = json_decode(file_get_contents('./data/data.init.json'));
+$puzzles = json_decode(file_get_contents('./data/data.init.json'));
 
 //Route root
 $app->get('/', function () use ($app){
-  echo json_encode($app->puzzles);
+  global $puzzles;
+  echo json_encode($puzzles);
 });
 
 //Get all entries
 $app->get('/puzzles', function () use ($app){
-	echo json_encode($app->puzzles);
+	global $puzzles;
+  echo json_encode($puzzles);
 });
 
 //Get one entry identified by the index of array
 $app->get('/puzzles/:id', function ($id) use ($app){
-	echo json_encode([$app->puzzles[$id]]);
+  global $puzzles;
+	echo json_encode([$puzzles[$id]]);
 });
 
 //Add and entry
 $app->post('/add_puzzle', function () use ($app){
-try {
+  global $puzzles;
+  try {
     // get and decode JSON request body
     $request = $app->request();
     $body = $request->getBody();
-    $input = json_decode($body); 
+    $input = json_decode($body, true);
     
+
+    array_push($puzzles, $input['value']);
+
+    
+    file_put_contents('./data/data.json',json_encode($puzzles));
     // return JSON-encoded response body
     $app->response()->header('Content-Type', 'application/json');
     echo json_encode($input);
