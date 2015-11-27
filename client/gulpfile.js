@@ -78,6 +78,11 @@ gulp.task('clean', function () {
   return del.sync(['pre'])
 });
 
+//Delete files of dist
+gulp.task('clean_dist', function () {
+  return del.sync(['dist'])
+});
+
 //Watch for changes in angular and its templates
 gulp.task("watcher", function (){
   gulp.watch(src.angularModules, ['clean', 'annotate', 'templates', 'scripts', 'browserify']);

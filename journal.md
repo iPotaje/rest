@@ -19,10 +19,10 @@ Imported from a cdn ... or from a local folder
 
 - Started to use mapsource, watch errors without them is impossible   
 - Markdown: Force a new line -> make two space before new line ;)
-- Git commands:
-git push origin master
-git commit -am "message"
-git log
+- Git commands:  
+    * git push origin master  
+    * git commit -am "message"  
+    * git log  
 
 ###11/27/2015   
 - Added php server to gulpfile   
@@ -33,4 +33,5 @@ Don't forget detached process in spawn and stdio configuration (see links)
 - Markdown nested list : indent four spaces    
 - Add minify html to gulp to strip comments in html files   
 We need to redistribute all folders!  
-- Finish business logic, all CRUD operations
+- Finish business logic, all CRUD operations  
+    * Add  
