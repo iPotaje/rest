@@ -3,9 +3,9 @@ var angular 	  = require('angular');
 var foundation 	= require('foundation');
 
 
-window.onload = function(){
+$(function() {
 	$(document).foundation();
-  console.log("initializedd");
-};
+  	console.log("initializedd");
+});
 
 angular.module('theApp', []);

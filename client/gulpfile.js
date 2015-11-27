@@ -85,6 +85,7 @@ gulp.task('clean_dist', function () {
 
 //Watch for changes in angular and its templates
 gulp.task("watcher", function (){
+  gulp.watch(['./src/*.htm', './src/*.html'], ['minify-html']);
   gulp.watch(src.angularModules, ['clean', 'annotate', 'templates', 'scripts', 'browserify']);
   gulp.watch(src.angularTemplates, ['clean', 'annotate' , 'templates', 'scripts', 'browserify'])
 });

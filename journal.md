@@ -35,3 +35,6 @@ Don't forget detached process in spawn and stdio configuration (see links)
 We need to redistribute all folders!  
 - Finish business logic, all CRUD operations  
     * Add  
+- Add tag to git repository   
+https://git-scm.com/book/en/v2/Git-Basics-Tagging  
+    git tag  

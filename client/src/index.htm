@@ -11,7 +11,7 @@
   	<script src="lib/foundation.min.js"></script>
 	<script src="js/bundle.min.js"></script>
 </head>
-<body ng-controller="listController">
+<body>
   <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
@@ -24,7 +24,7 @@
       </a>
       </p>
     </div><!-- off-canvas position-left -->
-    <div class="off-canvas-content" data-off-canvas-content>
+    <div class="off-canvas-content" data-off-canvas-content ng-controller="listController">
     <!-- content -->
     <!-- title-bar -->
       <div class="title-bar">
@@ -37,12 +37,13 @@
     <div class="row hide-for-small-only">&nbsp;
     </div>
     <div class="row">
+    {{debugger}}
       <div class="small-12 medium-6 medium-offset-3 columns">
         <div id="list-container" class="callout small">
           <div class="input-group">
             <input class="input-group-field" type="text"></input>
-            <a class="input-group-button button success">Search</a>
-            <a class="input-group-button button Success">Add</a>
+            <a class="input-group-button button success" ng-click="showDebug = !showDebug">Search</a>
+            <a class="input-group-button button Success" ng-click="printing()">Add</a>
           </div>
                   <ul id="list" ng-repeat="item in list" ng-cloack>
                     <li class="clearfix">
@@ -52,7 +53,7 @@
                     </li>
                   </ul>
       </div><!-- list-container -->
-      <button class="button large float-right"><i class="fi-refresh"></i></button>
+      <button class="button large float-right" ng-click="printing()"><i class="fi-refresh"></i></button>
       </div><!-- columns -->
     </div><!-- row -->
     <div class="row">
