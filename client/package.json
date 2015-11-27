@@ -23,6 +23,7 @@
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-concat": "^2.6.0",
+    "gulp-minify-html": "^1.0.4",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
@@ -35,13 +36,24 @@
     "watchify": "^3.6.1"
   },
   "browserify-shim": {
-    "jquery" : { "exports": "global:$" },
-    "angular" : { "exports": "global:angular" },
-    "foundation" : {"exports" : "global:foundation"}
+    "jquery": {
+      "exports": "global:$"
+    },
+    "angular": {
+      "exports": "global:angular"
+    },
+    "foundation": {
+      "exports": "global:foundation"
+    }
   },
   "browserify": {
     "transform": [
-      ["browserify-shim", {"global":true}],
+      [
+        "browserify-shim",
+        {
+          "global": true
+        }
+      ],
       [
         "babelify",
         {

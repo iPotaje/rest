@@ -24,8 +24,8 @@ var dest      = {
 
 var src       = {
   webserver         : '.',
-  angularModules    : 'src/*.js',
-  angularTemplates  : 'partials/*.html',
+  angularModules    : 'src/js/*.js',
+  angularTemplates  : 'src/partials/*.html',
   alljs : [
               dest.preDirectory + '/*.js'
           ]
@@ -111,7 +111,7 @@ function bundle_js(bundler) {
     .pipe(uglify())
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist/js'))
 }
 
 // Browserify without watchify
@@ -148,5 +148,35 @@ gulp.task('php_server_stop', function() {
   }
 });
 
-gulp.task('default', ['php_server', 'annotate', 'templates', 'scripts', 'watcher','webserver', 'watchify']);
+gulp.task('default', ['php_server', 'copy', 'annotate', 'templates', 'scripts', 'watcher','webserver', 'watchify']);
 gulp.task('finish', ['php_server_stop', 'clean']);
+
+gulp.task('copy', ['copy_images', 'copy_lib', 'copy_css', 'minify-html']);
+
+gulp.task('copy_images', function(){
+  return gulp.src('src/img/*.png')
+    .pipe(gulp.dest('dist/img'))
+});
+
+gulp.task('copy_lib', function(){
+  return gulp.src(['src/lib/*.js', 'src/lib/*.css', 'src/lib/*.map'])
+    .pipe(gulp.dest('dist/lib'))
+});
+
+gulp.task('copy_css', function(){
+  return gulp.src(['src/css/*.css'])
+    .pipe(gulp.dest('dist/css'))
+});
+
+var minifyHTML = require('gulp-minify-html');
+
+gulp.task('minify-html', function() {
+  var opts = {
+    conditionals: true,
+    spare:true
+  };
+
+  return gulp.src(['./src/*.htm', './src/*.html'])
+    .pipe(minifyHTML(opts))
+    .pipe(gulp.dest('./dist/'));
+});

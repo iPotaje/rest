@@ -1,0 +1,30 @@
+
+    #list-container{
+      display: block;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 400px;
+      box-shadow: 0 0 5px grey;
+    }
+    #list-container li, #list-container ul{
+      margin-bottom: 0.1rem!important;
+
+    }
+    #list-container ul{
+      border-bottom: 1px dashed grey;
+    }
+    .tiny.button{
+      margin: 0;
+      vertical-align: bottom;
+    }
+    .small-12{
+      padding:0;
+    }
+    .off-canvas{
+      padding: 10px;
+      background: #FFFFFF;
+    }
+    .li_item{
+      display: inline-block;
+      max-width: 250px;
+    }
