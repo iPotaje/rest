@@ -4,28 +4,43 @@
 	<meta charset="UTF-8">
 	<title>List of Puzzle Games</title>
 	<link rel="stylesheet" type="text/css" href="lib/foundation.min.css">
+  <style>
+    #list-container{
+      display: block;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 200px;
+    }
+    #list-container li, #list-container ul{
+      margin-bottom: 0.1rem!important;
+
+    }
+    #list-container ul{
+      border-bottom: 1px solid black;
+    }
+  </style>
   	<script src="lib/jquery.min.js"></script>
   	<script src="lib/angular.min.js"></script>
   	<script src="lib/foundation.min.js"></script>
 	<script src="dist/bundle.min.js"></script>
 </head>
 <body >
+<div class="row">
+<div class="small-12 medium-6 columns">
 	<div id="list-container" ng-controller="listController">
     <ul id="list" ng-repeat="item in list" ng-cloack>
       <li>{{item}}</li>
     </ul>
 		<h2>Debug data</h2>
 		<h4 ng-cloack>{{data}}</h4>
-	</div>
-		
-		
-		<button href="#" ng-click="getAll()">Get all</button>
-		<button ng-click="get();">Get 1</button>
-		<button ng-click="update()">Update 1</button>
-		<button ng-click="add()">Add 1</button>
-		<button ng-click="del()">Delete 1</button>
-
-
+	</div><!-- list-container -->
+    <button href="#" ng-click="getAll()">Get all</button>
+    <button ng-click="get();">Get 1</button>
+    <button ng-click="update()">Update 1</button>
+    <button ng-click="add()">Add 1</button>
+    <button ng-click="del()">Delete 1</button>
+  </div><!-- columns -->
+  <div class="small-12 medium-6 columns">
     <div class="off-canvas-wrapper">
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
       <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
@@ -43,6 +58,13 @@
         </div>
       </div>
     </div>
+  </div><!-- columns -->
+</div><!-- row -->
+		
+
+
+
+
 
 </body>
 </html>
