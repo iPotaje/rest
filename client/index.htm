@@ -4,19 +4,36 @@
 	<meta charset="UTF-8">
 	<title>List of Puzzle Games</title>
 	<link rel="stylesheet" type="text/css" href="lib/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
   <style>
     #list-container{
       display: block;
       overflow-y: scroll;
       overflow-x: hidden;
-      max-height: 200px;
+      height: 400px;
+      box-shadow: 0 0 5px grey;
     }
     #list-container li, #list-container ul{
       margin-bottom: 0.1rem!important;
 
     }
     #list-container ul{
-      border-bottom: 1px solid black;
+      border-bottom: 1px dashed grey;
+    }
+    .tiny.button{
+      margin: 0;
+      vertical-align: bottom;
+    }
+    .small-12{
+      padding:0;
+    }
+    .off-canvas{
+      padding: 10px;
+      background: #FFFFFF;
+    }
+    .li_item{
+      display: inline-block;
+      max-width: 250px;
     }
   </style>
   	<script src="lib/jquery.min.js"></script>
@@ -24,47 +41,61 @@
   	<script src="lib/foundation.min.js"></script>
 	<script src="dist/bundle.min.js"></script>
 </head>
-<body >
-<div class="row">
-<div class="small-12 medium-6 columns">
-	<div id="list-container" ng-controller="listController">
-    <ul id="list" ng-repeat="item in list" ng-cloack>
-      <li>{{item}}</li>
-    </ul>
-		<h2>Debug data</h2>
-		<h4 ng-cloack>{{data}}</h4>
-	</div><!-- list-container -->
-    <button href="#" ng-click="getAll()">Get all</button>
-    <button ng-click="get();">Get 1</button>
-    <button ng-click="update()">Update 1</button>
-    <button ng-click="add()">Add 1</button>
-    <button ng-click="del()">Delete 1</button>
-  </div><!-- columns -->
-  <div class="small-12 medium-6 columns">
-    <div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-        Off Canvas Content
+<body ng-controller="listController">
+  <div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      <h5>Who made this?</h5>
+      <hr>
+      <br>
+      <p class="text-center">
+      <a href="http://ipotaje.es" target="_blank">
+      <img src="img/ipotaje.png">
+      </a>
+      </p>
+    </div><!-- off-canvas position-left -->
+    <div class="off-canvas-content" data-off-canvas-content>
+    <!-- content -->
+    <!-- title-bar -->
+      <div class="title-bar">
+        <div class="title-bar-left">
+          <button class="menu-icon" type="button" data-open="offCanvas"></button>
+        </div><!-- title-bar-left -->
+        <div class="title-bar-title">List of Puzzle Games</div>
       </div>
-      <div class="off-canvas-content" data-off-canvas-content>
-      <button type="button" class="button" data-toggle="offCanvas">Open Menu</button>
-        <h4>Content</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </div>
+    <!-- title-bar -->
+    <div class="row hide-for-small-only">&nbsp;
     </div>
-  </div><!-- columns -->
-</div><!-- row -->
-		
-
-
-
-
-
+    <div class="row">
+      <div class="small-12 medium-6 medium-offset-3 columns">
+        <div id="list-container" class="callout small">
+          <div class="input-group">
+            <input class="input-group-field" type="text"></input>
+            <a class="input-group-button button success">Search</a>
+            <a class="input-group-button button Success">Add</a>
+          </div>
+                  <ul id="list" ng-repeat="item in list" ng-cloack>
+                    <li class="clearfix">
+                      <div class="li_item">{{item}}</div>
+                      <button class="float-right tiny button alert"><i class="fi-x"></i></button>
+                      <button class="float-right tiny button success"><i class="fi-pencil"></i></button>                        
+                    </li>
+                  </ul>
+      </div><!-- list-container -->
+      <button class="button large float-right"><i class="fi-refresh"></i></button>
+      </div><!-- columns -->
+    </div><!-- row -->
+    <div class="row">
+      <br><br><br>
+      &nbsp;
+      <button class="button large hollow alert" ng-init="showDebug = true" ng-click="showDebug = !showDebug"><i class="fi-eye"></i>&nbsp;&nbsp;Debug data</button>
+      <div id="debug-data" class="callout small" ng-show="showDebug">
+        <h4 ng-cloack>{{data}}</h4>
+      </div><!-- row -->
+    </div>
+      <!-- content -->
+      </div><!-- off-canvas-content -->
+    </div><!-- off-canvas-wrapper-inner -->
+  </div><!-- off-canvas-wrapper -->
 </body>
 </html>
