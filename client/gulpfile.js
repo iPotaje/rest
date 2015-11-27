@@ -141,7 +141,12 @@ gulp.task('php_server', function(){
 var exec = require('child_process').execSync;
 
 gulp.task('php_server_stop', function() {
-  exec('killall php');
+  try{
+    exec('killall php');
+  }catch(e){
+    // console.log(e);
+  }
 });
 
-gulp.task('default', ['annotate', 'templates', 'scripts', 'watcher','webserver', 'watchify']);
+gulp.task('default', ['php_server', 'annotate', 'templates', 'scripts', 'watcher','webserver', 'watchify']);
+gulp.task('finish', ['php_server_stop', 'clean']);
