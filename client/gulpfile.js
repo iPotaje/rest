@@ -26,7 +26,7 @@ var dest      = {
 var src       = {
   webserver         : '.',
   angularModules    : 'src/js/*.js',
-  angularTemplates  : 'src/partials/*.html',
+  angularTemplates  : 'src/js/templates/*.htm',
   alljs : [
               dest.preDirectory + '/*.js'
           ]

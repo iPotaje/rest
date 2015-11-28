@@ -1,0 +1,10 @@
+<button 
+	class="button large hollow alert" 
+	ng-init="showDebug = false" 
+	ng-click="showDebug = !showDebug">
+		<i class="fi-eye"></i>&nbsp;&nbsp;Debug data
+</button>
+
+<div id="debug-data" class="callout small" ng-show="showDebug">
+
+<p ng-cloak>{{data}}</p>

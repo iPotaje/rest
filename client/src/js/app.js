@@ -8,4 +8,4 @@ $(function() {
   	console.log("initializedd");
 });
 
-angular.module('theApp', []);
+angular.module('theApp', ['templates']);

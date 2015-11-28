@@ -45,3 +45,6 @@ Todo:
     * Update function: Highlight the element updating, update buttons values
     * Style: Add margin from the left to the list
     * When search and delete the list is the same and can delete other elements not showing
+
+### 11/28/2015  
+Lets make some directives ;)

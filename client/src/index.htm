@@ -11,64 +11,19 @@
   	<script src="lib/foundation.min.js"></script>
 	<script src="js/bundle.min.js"></script>
 </head>
-<body>
-  <div class="off-canvas-wrapper">
-  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-      <h5>Who made this?</h5>
-      <hr>
-      <br>
-      <p class="text-center">
-      <a href="http://ipotaje.es" target="_blank">
-      <img src="img/ipotaje.png">
-      </a>
-      </p>
-    </div><!-- off-canvas position-left -->
-    <div class="off-canvas-content" data-off-canvas-content ng-controller="listController">
-    <!-- content -->
-    <!-- title-bar -->
-      <div class="title-bar">
-        <div class="title-bar-left">
-          <button class="menu-icon" type="button" data-open="offCanvas"></button>
-        </div><!-- title-bar-left -->
-        <div class="title-bar-title">List of Puzzle Games</div>
-      </div>
-    <!-- title-bar -->
-    <div class="row hide-for-small-only">&nbsp;
-    </div>
+<body ng-controller="listController">
+  <!-- Menu -->
+  <ip-menu>
+    <div class="row hide-for-small-only">&nbsp;</div>
     <div class="row">
-      <div id="list-container" class="small-12 medium-6 medium-offset-3 columns">
-        <div class="input-group" ng-cloak>
-          <input class="input-group-field" type="text" ng-model="inputText" autofocus tabindex="1" ng-blur="inputText == ''?cancel():''"></input>
-          <a class="input-group-button button success" ng-click="searchText = inputText" tabindex="2" ng-hide="isUpdating">Search</a>
-          <a class="input-group-button button success" ng-click="updateThis(toUpdate, inputText)" tabindex="2" ng-show="isUpdating">Update</a>
-          <a class="input-group-button button primary" ng-click="add(inputText)" tabindex="3" ng-hide="isUpdating">Add</a>
-          <a class="input-group-button button alert" ng-click="cancel()" tabindex="3" ng-show="isUpdating">Cancel</a>
-        </div>
-        <div id="list-container-list">
-          
-                  <ul id="list" ng-repeat="item in list | filter:searchText" ng-cloak>
-                    <li class="clearfix">
-                      <div class="li_item">{{item}}</div>
-                      <button class="float-right tiny button alert" ng-click="del($index)"><i class="fi-x"></i></button>
-                      <button class="float-right tiny button success" ng-click="update(list.indexOf(item))"><i class="fi-pencil"></i></button>                        
-                    </li>
-                  </ul>
-      </div><!-- list-container -->
-      <button class="button large float-right" ng-click="reset()"><i class="fi-refresh"></i></button>
-      </div><!-- columns -->
+      <!-- List of items -->
+      <ip-list-container/>
     </div><!-- row -->
     <div class="row">
       <br><br><br>
       &nbsp;
-      <button class="button large hollow alert" ng-init="showDebug = true" ng-click="showDebug = !showDebug"><i class="fi-eye"></i>&nbsp;&nbsp;Debug data</button>
-      <div id="debug-data" class="callout small" ng-show="showDebug">
-        <h4 ng-cloak>{{data}}</h4>
-      </div><!-- row -->
-    </div>
-      <!-- content -->
-      </div><!-- off-canvas-content -->
-    </div><!-- off-canvas-wrapper-inner -->
-  </div><!-- off-canvas-wrapper -->
+      <ip-debug-button/>
+    </div><!-- row -->
+  </ip-menu>
 </body>
 </html>

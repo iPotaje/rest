@@ -1,0 +1,22 @@
+<div id="list-container" class="small-12 medium-6 medium-offset-3 columns">
+  <ip-input-group></ip-input-group>
+  <div id="list-container-list">
+    
+            <ul id="list" 
+                ng-repeat="item in list | filter:searchText" 
+                ng-cloak>
+              <li class="clearfix">
+                <div class="li_item">{{item}}</div>
+                <button class="float-right tiny button alert" 
+                        ng-click="del($index)"><i class="fi-x"></i>
+                </button>
+                <button class="float-right tiny button success" 
+                        ng-click="update(list.indexOf(item))"><i class="fi-pencil"></i>
+                </button>                        
+              </li>
+            </ul>
+</div><!-- list-container -->
+<button class="button large float-right" 
+        ng-click="reset()"><i class="fi-refresh"></i>
+</button>
+</div><!-- list-container -->

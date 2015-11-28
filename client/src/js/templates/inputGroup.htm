@@ -1,0 +1,29 @@
+<div class="input-group" ng-cloak>
+  <input class="input-group-field" 
+  	type="text" 
+  	ng-model="inputText" 
+  	autofocus 
+  	tabindex="1" 
+  	ng-blur="inputText == ''?cancel():''">
+  </input>
+  <a class="input-group-button button success" 
+  	ng-click="searchText = inputText" 
+  	tabindex="2" 
+  	ng-hide="isUpdating">Search
+  </a>
+  <a class="input-group-button button success" 
+  	ng-click="updateThis(toUpdate, inputText)" 
+  	tabindex="2" 
+  	ng-show="isUpdating">Update
+  </a>
+  <a class="input-group-button button primary" 
+  	ng-click="add(inputText)" 
+  	tabindex="3" 
+  	ng-hide="isUpdating">Add
+  </a>
+  <a class="input-group-button button alert" 
+  	ng-click="cancel()" 
+  	tabindex="3" 
+  	ng-show="isUpdating">Cancel
+  </a>
+</div>
