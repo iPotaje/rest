@@ -92,3 +92,4 @@ angular.module('theApp')
     $scope.inputText = "";
   }
 })
+;

@@ -1,34 +1,35 @@
 angular.module('theApp')
 
-.directive('ipMenu', function ($templateCache) 
+.directive('ipMenu', function () 
 {
  return {
    restrict 	: 'E',
-   template 	: $templateCache.get('menu.htm'),
+   templateUrl 	: 'menu.htm',
    transclude	: true
  }
 })
 
-.directive('ipDebugButton', function ($templateCache) 
+.directive('ipDebugButton', function () 
 {
  return {
    restrict 	: 'E',
-   template 	: $templateCache.get('debugButton.htm')
+   templateUrl 	: 'debugButton.htm'
  }
 })
 
-.directive('ipInputGroup', function ($templateCache) 
+.directive('ipInputGroup', function () 
 {
  return {
    restrict 	: 'E',
-   template 	: $templateCache.get('inputGroup.htm')
+   templateUrl 	: 'inputGroup.htm'
  }
 })
 
-.directive('ipListContainer', function ($templateCache) 
+.directive('ipListContainer', function () 
 {
  return {
    restrict 	: 'E',
-   template 	: $templateCache.get('listContainer.htm')
+   templateUrl 	: 'listContainer.htm'
  }
 })
+;
