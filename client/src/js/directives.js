@@ -5,7 +5,8 @@ angular.module('theApp')
  return {
    restrict 	: 'E',
    templateUrl 	: 'menu.htm',
-   transclude	: true
+   transclude	: true,
+   controller 	: "listController"
  }
 })
 

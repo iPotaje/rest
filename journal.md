@@ -48,3 +48,7 @@ Todo:
 
 ### 11/28/2015  
 Lets make some directives ;)
+
+### 11/29/2015
+$templateCache not need to declare it usign gulp-templateCache, it makes a module templates that have a run method. 
+Remember that in config method the service $templateCache is not declared (whatever services)
